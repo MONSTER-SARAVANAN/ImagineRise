@@ -1,0 +1,32 @@
+### Register User
+POST http://localhost:4000/api/user/register
+Content-Type: application/json
+
+{
+  "name": "leo",
+  "email": "leodas@gmail.com",
+  "password": "123456"
+}
+
+
+### login
+POST http://localhost:4000/api/user/login
+Content-Type: application/json
+
+{
+  "email": "leodas@gmail.com",
+  "password": "123456"
+}
+### credits
+POST http://localhost:4000/api/user/credits
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5YTJmMDIzNmRmMDlkOGEyNGI3NiIsImlhdCI6MTc1MzQ1NzkwOSwiZXhwIjoxNzU0MDYyNzA5fQ.2BlpcjI9074CejMqDpevRoUx-dmiKs5l0d1xckAQbRE
+
+### generate image
+POST http://localhost:4000/api/image/generate-image
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5YTJmMDIzNmRmMDlkOGEyNGI3NiIsImlhdCI6MTc1MzQ1NzkwOSwiZXhwIjoxNzU0MDYyNzA5fQ.2BlpcjI9074CejMqDpevRoUx-dmiKs5l0d1xckAQbRE
+
+{
+  "prompt": "Flying Man"
+}

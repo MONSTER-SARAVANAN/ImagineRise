@@ -13,7 +13,7 @@ const AppContextProvider = (props) => {
     const [credit, setCredit] = useState(0)
 
     
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = import.meta.env.VITE_API_BASE_URL;
     // console.log('Backend URL:', backendUrl);
     
     const navigate = useNavigate()

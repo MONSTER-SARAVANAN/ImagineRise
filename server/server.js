@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
-app.get('/', (req, res)=> res.send("API Working"))
+// app.get('/', (req, res)=> res.send("API Working"))
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

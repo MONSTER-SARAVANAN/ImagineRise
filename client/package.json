@@ -13,6 +13,7 @@
     "@stripe/react-stripe-js": "^3.9.0",
     "@stripe/stripe-js": "^7.8.0",
     "axios": "^1.11.0",
+    "imaginerise": "file:..",
     "motion": "^12.23.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

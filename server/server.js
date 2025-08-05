@@ -8,11 +8,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', // or 'http://localhost:5173' or your frontend domain
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 
 
 
@@ -20,13 +24,15 @@ app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
 // app.get('/', (req, res)=> res.send("API Working"))
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+if (process.env.NODE_ENV === 'production') {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+}s
 
 connectDB().then(()=> {
     app.listen(PORT, ()=> console.log('Server running on port '+ PORT));

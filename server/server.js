@@ -21,7 +21,7 @@ app.use(cors({
 
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
-// app.get('/', (req, res)=> res.send("API Working"))
+app.get('/', (req, res)=> res.send("API Working"))
 
 if (process.env.NODE_ENV === 'production') {
   const __filename = fileURLToPath(import.meta.url);
